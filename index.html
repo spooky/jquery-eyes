@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Devil Robot Eyes</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <link rel="stylesheet" type="text/css" href="http://yui.yahooapis.com/3.6.0/build/cssreset/cssreset-min.css">
+    <style type="text/css">
+        #wrapper { position: absolute; left: 50%; top: 50%; margin: -128px 0 0 -128px; }
+        .pupil { display:block; position: absolute; width: 7px; height: 8px; background: #000; }
+        #right-eye { top: 78px; left: 59px;
+            transform: skewY(9deg);
+            -ms-transform: skewY(9deg); /* IE 9 */
+            -webkit-transform: skewY(9deg); /* Safari and Chrome */
+            -o-transform: skewY(9deg); /* Opera */
+            -moz-transform: skewY(9deg); /* Firefox */
+        }
+        #left-eye { top: 88px; left: 103px;
+            transform: skewY(11deg);
+            -ms-transform: skewY(11deg); /* IE 9 */
+            -webkit-transform: skewY(11deg); /* Safari and Chrome */
+            -o-transform: skewY(11deg); /* Opera */
+            -moz-transform: skewY(11deg); /* Firefox */
+        }
+    </style>
+</head>
+<body>
+    <span id="mouse-debug"></span>
+    <div id="frw">
+        <span id="wrapper">
+            <!-- <canvas id="debug" width="256" height="256" style="position: absolute; z-index: 100;"></canvas> -->
+            <img id="robot-devil" src="RobotDevil.png" alt="Robot Devil" />
+            <b id="left-eye" class="pupil"></b>
+            <b id="right-eye" class="pupil"></b>
+        </span>
+    </div>
+
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+    <script type="text/javascript" src="jquery.eyes.js"></script>
+    <script type="text/javascript">
+        (function ($) {
+            $('#robot-devil')
+                .eyes({ shape: [[55,76],[61,68],[74,71],[60,85]], center: [63,76], pupil: '#right-eye' })
+                .eyes({ shape: [[104,80],[125,85],[120,99],[100,94],[99,90]], center: [108,88], pupil: '#left-eye' });
+        })(jQuery);
+    </script>
+</body>
+</html>
